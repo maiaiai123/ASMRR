@@ -1,0 +1,120 @@
+
+:root {
+    --bg-color: #e0e5ec;
+    --glass: rgba(255, 255, 255, 0.4);
+    --shadow-light: #ffffff;
+    --shadow-dark: #a3b1c6;
+    --accent: #a8e6cf;
+    --text: #4a4a4a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    z-index: 10;
+}
+
+header h1 {
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+main {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Меню */
+.menu {
+    display: flex;
+    gap: 25px;
+    z-index: 5;
+}
+
+.card {
+    width: 140px;
+    height: 140px;
+    background: var(--bg-color);
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 9px 9px 16px var(--shadow-dark), 
+                -9px -9px 16px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.card:active {
+    box-shadow: inset 5px 5px 10px var(--shadow-dark), 
+                inset -5px -5px 10px var(--shadow-light);
+    transform: scale(0.95);
+}
+
+.card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Экраны игр */
+.game-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-color);
+}
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 22px;
+    border-radius: 25px;
+    background: var(--glass);
+    border: none;
+box-shadow: 4px 4px 8px var(--shadow-dark); cursor: pointer; font-family: inherit; z-index: 100; }
+/ Слайм /
+slime-game {
+background: radial-gradient(circle, #ffdde1, #ee9ca7);
+cursor: crosshair;
+overflow: hidden;
+}
+.slime-blob { position: absolute; border-radius: 50%; pointer-events: none; animation: expand 0.8s ease-out forwards; }
+@keyframes expand { 0% { transform: scale(0); opacity: 1; } 100% { transform: scale(4); opacity: 0; } }
+.hint { position: absolute; top: 80px; opacity: 0.5; font-weight: 300; }
+/ Поп-ит / .pop-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; padding: 20px; }
+.bubble { width: 65px; height: 65px; border-radius: 50%; background: var(--bg-color); box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light); cursor: pointer; transition: 0.2s; }
+.bubble.popped { box-shadow: inset 5px 5px 10px var(--shadow-dark), inset -5px -5px 10px var(--shadow-light); transform: scale(0.92); background: rgba(0,0,0,0.03); }
