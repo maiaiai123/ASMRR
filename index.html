@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ZEN ZONE | ASMR & Anti-Stress</title>
+    <!-- Подключаем стили -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем шрифт -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>Zen Zone</h1>
+</header>
+
+<main>
+    <!-- Главное меню -->
+    <div class="menu" id="main-menu">
+        <div class="card" onclick="startGame('slime')">
+            <span class="icon">💧</span>
+            <p>Slime</p>
+        </div>
+        <div class="card" onclick="startGame('pop')">
+            <span class="icon">🫧</span>
+            <p>Pop It</p>
+        </div>
+    </div>
+
+    <!-- Экран игры: Слайм -->
+    <div id="slime-game" class="game-screen">
+        <button class="back-btn" onclick="goBack()">← Назад</button>
+        <p class="hint">Ткни в слайм!</p>
+    </div>
+
+    <!-- Экран игры: Поп-ит -->
+    <div id="pop-game" class="game-screen">
+        <button class="back-btn" onclick="goBack()">← Назад</button>
+        <div class="pop-grid" id="pop-grid">
+            <!-- Пузырьки генерируются через JS -->
+        </div>
+    </div>
+</main>
+
+<!-- Подключаем логику -->
+<script src="script.js"></script>
+</body>
+</html>
